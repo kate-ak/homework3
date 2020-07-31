@@ -7,7 +7,7 @@ const numChar = "1234567890";
 function writePassword() {
   let passwordChars = "";
   let passwordLength = prompt("Please select your password length between 8 and 128 characters");
-  let characterLength = parseInt(passwordLength);
+  const characterLength = parseInt(passwordLength);
   if (characterLength < 8 || characterLength > 128) {
     alert("please enter a valid password length");
     return;
@@ -30,12 +30,23 @@ function writePassword() {
     passwordChars += numChar;
   }
   if (passwordChars.length < 1) {
-  alert("please select confirm at least one option for password")
+  alert("please confirm at least one option for password")
   }
+  return characterLength;
+}
+// let pwLength = characterLength;
+// function for randomizing to user character limit
+// YOU ARE HAVING ISSUES WITH TAKING A VARIABLE FROM A PREVIOUS FUNCTION AND USING IT IN  A NEW FUNCTION
+// You need to do input
 
+function generatePassword() {
+  for (var i = 0; i < characterLength.length; i++){
+    var password = passwordChar[Math.floor(Math.random) * characterLength.length];
+  }
+  return password;
 }
 writePassword ();
-console.log(passwordChars)
+generatePassword();
 
 //   let password = generatePassword();
 //   let passwordText = document.querySelector("#password");
@@ -45,4 +56,4 @@ console.log(passwordChars)
 // // Add event listener to generate button
 // generateBtn.addEventListener("click", writePassword);
 
-// // Set i = 0, then for loop until index.length of LENGTH
+// // Set i = 0, then for loop until index.length of LENGTH--- done
