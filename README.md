@@ -7,9 +7,9 @@
 
 ## If enough parameters are met, a password will be generated meeting user-selected criteria
 
-REPO: https://github.com/kate-ak/homework3
+##REPO: https://github.com/kate-ak/homework3
 
-INDEX: https://kate-ak.github.io/homework3/
+##INDEX: https://kate-ak.github.io/homework3/
 
 The following image demonstrates the application functionality:
 
