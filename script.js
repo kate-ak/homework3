@@ -11,6 +11,7 @@ function generate() {
   let characterLength = parseInt(passwordLength);
   if (characterLength < 8 || characterLength > 128) {
     alert("please enter a valid password length");
+    return;
   }
   let userUpperChar = confirm("Do you want to use uppercase characters?");
   let userLowerChar = confirm("Do you want to use lowercase characters?");
@@ -30,23 +31,24 @@ function generate() {
     passwordChars += numChar;
   }
   if (passwordChars.length < 1) {
-  alert("please confirm at least one option for password")
+  alert("please confirm at least one option for password"); 
   return
   }
   else {
     var length = characterLength;
       charset = passwordChars;
-      retVal = "";
+      password = "";
     for (var i = 0, n = charset.length; i < length; ++i) {
-      retVal += charset.charAt(Math.floor(Math.random() * n));
+      password += charset.charAt(Math.floor(Math.random() * n));
     }
-  return retVal;
+  return password;
+  }
+}
+// Write password to the #password input
+function writePassword() {
   var password = generate();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-  }
 }
-
-generateBtn.addEventListener("click", generate);
-console.log(password);
-// generatePassword();
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
