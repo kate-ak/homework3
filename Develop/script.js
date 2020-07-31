@@ -5,6 +5,7 @@ const numChar = "1234567890";
 
 // Write password to the #password input
 function writePassword() {
+  let passwordChars = "";
   let passwordLength = prompt("Please select your password length between 8 and 128 characters");
   let characterLength = parseInt(passwordLength);
   if (characterLength < 8 || characterLength > 128) {
@@ -16,8 +17,25 @@ function writePassword() {
   let userSpecialChar = confirm("Do you want to use special characters?");
   let userNumChar = confirm("Do you want to use numbers?")
 
+  if(userUpperChar) {
+    passwordChars += upperChar;
+  }
+  if (userLowerChar) {
+    passwordChars += lowerChar;
+  }
+  if (userSpecialChar) {
+    passwordChars += specialChar;
+  }
+  if (userNumChar) {
+    passwordChars += numChar;
+  }
+  if (passwordChars < 1) {
+  alert("please select confirm at least one option for password")
+  }
+
 }
 writePassword ();
+console.log(passwordChars)
 
 //   let password = generatePassword();
 //   let passwordText = document.querySelector("#password");
