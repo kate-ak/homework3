@@ -29,7 +29,7 @@ function writePassword() {
   if (userNumChar) {
     passwordChars += numChar;
   }
-  if (passwordChars < 1) {
+  if (passwordChars.length < 1) {
   alert("please select confirm at least one option for password")
   }
 
