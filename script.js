@@ -9,7 +9,7 @@ function generate() {
   let passwordChars = "";
   let passwordLength = prompt("Please select your password length between 8 and 128 characters");
   let characterLength = parseInt(passwordLength);
-  if (characterLength < 8 || characterLength > 128) {
+  if (isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
     alert("please enter a valid password length");
     return;
   }
